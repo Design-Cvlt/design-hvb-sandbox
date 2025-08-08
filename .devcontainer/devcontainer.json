@@ -1,15 +1,14 @@
 {
-  "name": "PHP",
-  "image": "mcr.microsoft.com/devcontainers/php:8.2-bullseye",
+  "name": "Design Hvb Hub",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+
+  "features": {
+    "ghcr.io/devcontainers/features/php:1": {
+      "version": "8.2"
+    }
+  },
 
   "forwardPorts": [8080],
 
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "bmewburn.vscode-intelephense-client",
-        "xdebug.php-debug"
-      ]
-    }
-  }
+  "postCreateCommand": "bash ./.devcontainer/post-create.sh"
 }
